@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DDBCB40B803B50BF991B891 /* libPods-BlockPointers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5EC5FB65C5B72C698B71C3 /* libPods-BlockPointers.a */; };
 		88487DED20070D0E0036D55D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88487DEC20070D0E0036D55D /* AppDelegate.m */; };
 		88487DF020070D0E0036D55D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88487DEF20070D0E0036D55D /* ViewController.m */; };
 		88487DF320070D0E0036D55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88487DF120070D0E0036D55D /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F5EC5FB65C5B72C698B71C3 /* libPods-BlockPointers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlockPointers.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88487DE820070D0E0036D55D /* BlockPointers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockPointers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88487DEB20070D0E0036D55D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		88487DEC20070D0E0036D55D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		88487E20200748940036D55D /* NSObject+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Block.m"; sourceTree = "<group>"; };
 		88487E22200766EE0036D55D /* BPBlockLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBlockLayout.h; sourceTree = "<group>"; };
 		88487E23200766EE0036D55D /* BPBlockLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBlockLayout.m; sourceTree = "<group>"; };
+		C810FE098BF7E312877E7F99 /* Pods-BlockPointers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockPointers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockPointers/Pods-BlockPointers.debug.xcconfig"; sourceTree = "<group>"; };
+		DA91CE06449007C0E733481B /* Pods-BlockPointers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockPointers.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockPointers/Pods-BlockPointers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DDBCB40B803B50BF991B891 /* libPods-BlockPointers.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00DA77AD6A8CC66C17932A30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C810FE098BF7E312877E7F99 /* Pods-BlockPointers.debug.xcconfig */,
+				DA91CE06449007C0E733481B /* Pods-BlockPointers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3C5759B4E1053531E7DB29E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F5EC5FB65C5B72C698B71C3 /* libPods-BlockPointers.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		88487DDF20070D0E0036D55D = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +114,8 @@
 				88487E0320070D0E0036D55D /* BlockPointersTests */,
 				88487E0E20070D0F0036D55D /* BlockPointersUITests */,
 				88487DE920070D0E0036D55D /* Products */,
+				00DA77AD6A8CC66C17932A30 /* Pods */,
+				3C5759B4E1053531E7DB29E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88487E1420070D0F0036D55D /* Build configuration list for PBXNativeTarget "BlockPointers" */;
 			buildPhases = (
+				F832757E30987A7175DB318A /* [CP] Check Pods Manifest.lock */,
 				88487DE420070D0E0036D55D /* Sources */,
 				88487DE520070D0E0036D55D /* Frameworks */,
 				88487DE620070D0E0036D55D /* Resources */,
+				A817859FD4322D8F14FAE4C9 /* [CP] Embed Pods Frameworks */,
+				339877D56E51AE497C49A2B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,6 +306,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		339877D56E51AE497C49A2B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockPointers/Pods-BlockPointers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A817859FD4322D8F14FAE4C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlockPointers/Pods-BlockPointers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F832757E30987A7175DB318A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		88487DE420070D0E0036D55D /* Sources */ = {
@@ -450,6 +525,7 @@
 		};
 		88487E1520070D0F0036D55D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C810FE098BF7E312877E7F99 /* Pods-BlockPointers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +539,7 @@
 		};
 		88487E1620070D0F0036D55D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA91CE06449007C0E733481B /* Pods-BlockPointers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

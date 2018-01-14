@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <objc/runtime.h>
+#import "NSObject+Block.h"
+#import "BPBlock.h"
+#import <FBRetainCycleDetector/FBRetainCycleDetector.h>
 
 @interface AppDelegate ()
 
@@ -25,13 +29,16 @@
         __unused NSObject *first = firstObject;
         __unused NSObject *second = secondObject;
         __unused NSObject *third = thirdObject;
-        NSLog(@"%p  %p  %p",first,second,third);
+        NSLog(@"%p  %p  %p",&first,&second,&third);
     };
-    void *ptr = (__bridge void *)(block);
-    size_t ptr_size = sizeof((*ptr));
-    NSLog(@"block size = %ld",ptr_size);
-    void *new = ptr+ptr_size;
-    NSLog(@"new  = %p",new);
+    block();
+    FBObjectiveCBlock *cb = [[FBObjectiveCBlock alloc] initWithObject:block configuration:[FBObjectGraphConfiguration new]];
+    NSSet *objs = [cb allRetainedObjects];
+    [objs enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
+ 
+        
+    }];
+    
     // Override point for customization after application launch.
     return YES;
 }
