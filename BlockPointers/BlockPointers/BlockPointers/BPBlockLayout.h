@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-
+EXTERN_API_C(NSIndexSet *) BlockAllReferenceLayout(id object);

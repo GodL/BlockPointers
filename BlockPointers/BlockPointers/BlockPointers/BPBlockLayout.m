@@ -59,7 +59,7 @@ static void byref_dispose_nop(struct _block_byref_block *param) {}
 @end
 
 
-static NSIndexSet *BlockAllReferenceLayout(id obj) {
+NSIndexSet *BlockAllReferenceLayout(id obj) {
     struct _block_literal * block = [obj blockify];
     if (block == NULL) {
         return nil;

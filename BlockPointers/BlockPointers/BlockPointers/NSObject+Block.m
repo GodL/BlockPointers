@@ -8,6 +8,7 @@
 
 #import "NSObject+Block.h"
 #import <objc/runtime.h>
+#import "BPBlockLayout.h"
 
 static Class _BPBlockRootClass() {
     static dispatch_once_t onecToken;
@@ -33,6 +34,23 @@ static Class _BPBlockRootClass() {
         return (__bridge struct _block_literal *)self;
     }
     return NULL;
+}
+
+- (NSArray *)blockStrongPointers {
+    if (![self isBlock]) {
+        return nil;
+    }
+    NSMutableArray *result = [NSMutableArray array];
+    NSIndexSet *set = BlockAllReferenceLayout(self);
+    void **obj = (__bridge void *)self;
+    [set enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        void **reference = &obj[idx];
+        if (reference && *reference) {
+            id strongRef = (__bridge id)*reference;
+            [result addObject:strongRef];
+        }
+    }];
+    return [result copy];
 }
 
 @end

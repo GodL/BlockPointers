@@ -15,4 +15,6 @@
 
 - (struct _block_literal *)blockify;
 
+- (NSArray *)blockStrongPointers;
+
 @end

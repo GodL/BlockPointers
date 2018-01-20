@@ -35,10 +35,13 @@
     FBObjectiveCBlock *cb = [[FBObjectiveCBlock alloc] initWithObject:block configuration:[FBObjectGraphConfiguration new]];
     NSSet *objs = [cb allRetainedObjects];
     [objs enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
- 
-        
+        NSLog(@"fb  = %@",obj);
     }];
-    
+    id block_ = block;
+    NSArray *arr = [block_ blockStrongPointers];
+    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"bpblock == %@",obj);
+    }];
     // Override point for customization after application launch.
     return YES;
 }
